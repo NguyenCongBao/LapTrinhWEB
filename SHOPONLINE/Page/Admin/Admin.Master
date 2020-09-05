@@ -1,0 +1,116 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Admin.master.cs" Inherits="SHOPONLINE.Page.Admin.Admin" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>SHOP 24H</title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <link href="~/Public/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="../../Public/style/style.css" rel="stylesheet" />
+    <style type="text/css">
+        #menu {
+            list-style-type: none;
+            width: 100%;
+            margin: 0;
+            padding: 0;
+            background: #343a40;
+            height: auto;
+        }
+
+            #menu li {
+                display: block;
+                width: 100%;
+                padding-left: 5px;
+                position: relative;
+                height: 50px;
+                line-height: 50px;
+                border-bottom: 1px solid #636e72;
+            }
+
+                #menu li a {
+                    display: block;
+                    color: #ffffff;
+                    font-size: 18px;
+                    text-decoration: none;
+                }
+
+                #menu li:hover {
+                    background: #636e72;
+                }
+
+                #menu li #sub-menu {
+                    display: none;
+                    margin: 0;
+                    padding: 0;
+                    background: #343a40;
+                    position: absolute;
+                    top: 0px;
+                    left: 228px;
+                    z-index: 999999999;
+                }
+
+                #menu li:hover #sub-menu {
+                    display: block;
+                    width: inherit;
+                    z-index: 100;
+                }
+    </style>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-2" style="background: #343a40; height: auto;">
+                    <ul id="menu">
+                        <li>
+                            <asp:HyperLink ID="HyperLink6" runat="server">
+                                <asp:Label ID="lbNameAdmin" runat="server" Text="Label"></asp:Label>
+                             </asp:HyperLink>
+                            <ul id="sub-menu">
+                                <li>
+                                    <asp:LinkButton ID="LinkButtonLogout" runat="server" OnClick="LinkButtonLogout_Click">Đăng xuất</asp:LinkButton>
+                                </li>
+                                <li>
+                                    <asp:HyperLink ID="HyperLink7" runat="server" NavigateUrl="~/Page/Home.aspx">Trang User</asp:HyperLink>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/Page/Admin/Product/Product.aspx">Quản lý sản phẩm</asp:HyperLink>
+                        </li>
+                        <li>
+                            <asp:HyperLink ID="HyperLink2" runat="server" NavigateUrl="~/Page/Admin/Category/Category.aspx">Quản lý danh mục hàng</asp:HyperLink>
+                        </li>
+                        <li>
+                            <asp:HyperLink ID="HyperLink3" runat="server" NavigateUrl="~/Page/Admin/Vendor/Vendor.aspx">Quản lý nhà sản xuất</asp:HyperLink>
+                        </li>
+                        <li>
+                            <asp:HyperLink ID="HyperLink4" runat="server" NavigateUrl="~/Page/Admin/News/News.aspx">Quản lý tin tức</asp:HyperLink>
+                        </li>
+                        <li>
+                            <asp:HyperLink ID="HyperLink5" runat="server" NavigateUrl="~/Page/Admin/User/User.aspx">Quản lý người dùng</asp:HyperLink>
+                        </li>
+                        <li>
+                            <asp:HyperLink ID="HyperLink8" runat="server" NavigateUrl="~/Page/Admin/Order/Order.aspx">Quản lý đơn hàng</asp:HyperLink>
+                        </li>
+
+                    </ul>
+                </div>
+
+                <div class="col-md-10" style="">
+                    <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                    </asp:ContentPlaceHolder>
+                </div>
+
+            </div>
+        </div>
+
+    </form>
+    <script src="~/Public/bootstrap/jquery/jquery-3.2.1.slim.min.js"></script>
+    <script src="~/Public/bootstrap/js/bootstrap.min.js"></script>
+</body>
+</html>

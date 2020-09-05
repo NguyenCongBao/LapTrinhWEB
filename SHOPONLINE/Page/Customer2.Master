@@ -1,0 +1,63 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Customer2.master.cs" Inherits="SHOPONLINE.Page.Customer2" %>
+
+<%@ Register Src="~/Page/Header.ascx" TagPrefix="uc1" TagName="Header" %>
+
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <link href="~/Public/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Public/bootstrap/css/bootstrap-grid.min.css" rel="stylesheet" />
+    <link href="~/Public/style/style.css" rel="stylesheet" />
+
+    <%-- favicon --%>
+    <link rel="apple-touch-icon" sizes="180x180" href="~/Public/images/favicon_io/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="~/Public/images/favicon_io/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="~/Public/images/favicon_io/favicon-16x16.png">
+    <link rel="manifest" href="~/Public/images/favicon_io/site.webmanifest">
+</head>
+<body>
+    <!-- Load Facebook SDK for JavaScript -->
+    <div id="fb-root"></div>
+    <script>
+        window.fbAsyncInit = function () {
+            FB.init({
+                xfbml: true,
+                version: 'v8.0'
+            });
+        };
+
+        (function (d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) return;
+            js = d.createElement(s); js.id = id;
+            js.src = 'https://connect.facebook.net/en_US/sdk/xfbml.customerchat.js';
+            fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));</script>
+
+    <!-- Your Chat Plugin code -->
+    <div class="fb-customerchat"
+        attribution="setup_tool"
+        page_id="106596151174754"
+        theme_color="#ffc300"
+        logged_in_greeting="Xin chào, Shop 24H có thể giúp gì cho bạn ?"
+        logged_out_greeting="Xin chào, Shop 24H có thể giúp gì cho bạn ?">
+    </div>
+
+    <form id="form1" runat="server">
+        <uc1:Header runat="server" ID="Header" />
+        <div>
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+    </form>
+    <script src="../Public/bootstrap/jquery/jquery-3.2.1.slim.min.js"></script>
+    <script src="../Public/bootstrap/js/bootstrap.min.js"></script>
+</body>
+</html>
